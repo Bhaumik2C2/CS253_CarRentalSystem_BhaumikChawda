@@ -5,7 +5,7 @@ The Car Rental System thus coded has three main elements :
  Can add , update , delete and view in each of the databases. They can view all the cars that exist in the system , ulike the customers who cant view the already rented cars .
 4) Car
 5) CSV Files
-In this system I have used the CSV(Comma Separated Value) Files for database handling as it is a very easy to access , implemement and understande database management system .
+In this system I have used the CSV(Comma Separated Value) Files for database handling as it is a very easy to access , implemement and understand database management system .
 The Four CSV Files used in thr making of this system are :
 
 1) car_database:
@@ -107,4 +107,26 @@ Thus it is bound to have the three attributes:
  The Manager class has an autonomy of performing 17 functions :
  1.addCustomer(const string& name, const string& id, const string& password): Adds customers
  2.addEmployee(const string& name, const string& id, const string& password):Adds employees
- 3.addCar(const string& modelName, const string& condition)
+ 3.addCar(const string& modelName, const string& condition):Adds cars
+ 4.deleteCustomerById(const string& customerId): deletes a customer from the database and frees the customers' corresponding rented cars(if there exist any).
+ 5.deleteEmployeeById(const string& employeeId): deletes a customer from the database and frees the employees' corresponding rented cars(if there exist any).
+ 6.deleteCar(const string& carModel): deletes cars
+ 7.displayCarDatabase(const Manager& manager): displays the car_database
+ 8.displayCustomerDatabase(const Manager& manager): displays the customer_database
+ 9.updateCarModel(const string& oldModel, const string& newModel): updates the car model
+ 10:updateAvgCustomerRecord(const string& carModel, const string& avgCustomerRecord): updates average customer record for a given car
+ 11 updateCondition(const string& carModel, const string& condition): updates condition of a car
+ 12.updateCustomerPassword(const string& customerId, const string& newPassword): updates a customer password
+ 13.updateCustomerRecord(const string& customerId, const string& newCustomerRecord): updates a customer record
+ 14.updateCustomerName(const string& customerId, const string& newName): updates customer name
+ 15.updateEmployeePassword(const string& employeeId, const string& newPassword): updates employee password
+ 16.updateEmployeeRecord(const string& employeeId, const string& newRecord): update employee record
+ 17.updateEmployeeName(const string& employeeId, const string& newName): updates employee name
+
+4. Auxiliary Functions :
+There are some auxiliary functions such as :
+1. exploreCustomer(Customer& C): Helps the customer to expore all the 5 functions he can perform and also logout when required.
+2. exploreManager(Manager& manager): Helps the manager to expore all the 17 functions he can perform and also logout when required.
+3. exploreEmployee(Employee& E): Helps the employee to expore all the 5 functions he can perform and also logout when required.
+4. Login(char UserType): Helps the managers, customers and employees to login / regsister as and when required . Performed with efficient error handling and unique ID registration for employee-customers.
+5. Welcome():This function nests the Login function. The login function thus nests all the explore functions . Hence for the system to operate only the Wlcome(0 function needs to be called once inside the main driver code.
